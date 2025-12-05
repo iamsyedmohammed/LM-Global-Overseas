@@ -36,17 +36,18 @@ export function Header() {
 
     return (
         <header
+            suppressHydrationWarning
             className={cn(
                 "sticky top-0 z-50 w-full transition-all duration-300",
                 scrolled
                     ? "bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-100"
-                    : "bg-white/80 backdrop-blur-md border-b border-gray-200"
+                    : "bg-white border-b border-gray-200"
             )}
         >
-            <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+            <div className="container mx-auto flex h-32 items-center justify-between px-4 md:px-6">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="relative h-12 w-auto aspect-[3/1]">
+                    <div className="relative h-24 w-auto aspect-[3/1]">
                         <img
                             src="/logo.png"
                             alt="LM Global Overseas"
@@ -56,12 +57,12 @@ export function Header() {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-2">
+                <nav className="hidden lg:flex items-center gap-6">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                            className="px-4 py-2 text-lg font-medium text-gray-700 hover:text-primary transition-colors"
                         >
                             {item.name}
                         </Link>
@@ -76,8 +77,8 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="hidden lg:block"
                     >
-                        <Button variant="secondary" size="sm" className="shadow-md hover:shadow-lg transition-shadow hover:scale-105 active:scale-95 duration-200">
-                            <Phone className="mr-2 h-4 w-4" />
+                        <Button variant="secondary" size="lg" className="shadow-md hover:shadow-lg transition-shadow hover:scale-105 active:scale-95 duration-200 text-base">
+                            <Phone className="mr-2 h-5 w-5" />
                             +91 79970 51424
                         </Button>
                     </a>
@@ -90,7 +91,7 @@ export function Header() {
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
                     >
-                        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
                     </button>
                 </div>
             </div>
@@ -109,7 +110,7 @@ export function Header() {
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="block px-4 py-3 text-gray-700 hover:text-primary font-medium transition-colors"
+                                    className="block px-4 py-3 text-lg text-gray-700 hover:text-primary font-medium transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item.name}

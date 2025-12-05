@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/Schema";
 
 const outfit = Outfit({
@@ -29,14 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <OrganizationSchema />
         <WebsiteSchema />
       </head>
-      <body className={`${outfit.variable} font-sans antialiased flex flex-col min-h-screen`}>
+      <body
+        className={`${outfit.variable} font-sans antialiased flex flex-col min-h-screen`}
+        suppressHydrationWarning
+      >
         <Header />
         <main className="flex-1">{children}</main>
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

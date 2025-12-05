@@ -53,32 +53,32 @@ export function Footer() {
                         <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/about" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/about" className="text-gray-400 hover:text-accent transition-colors">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services" className="text-gray-400 hover:text-accent transition-colors">
                                     Our Services
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/countries" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/countries" className="text-gray-400 hover:text-accent transition-colors">
                                     Countries
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/tools" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/tools" className="text-gray-400 hover:text-accent transition-colors">
                                     Visa Tools
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/testimonials" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/testimonials" className="text-gray-400 hover:text-accent transition-colors">
                                     Success Stories
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/contact" className="text-gray-400 hover:text-accent transition-colors">
                                     Contact Us
                                 </Link>
                             </li>
@@ -90,27 +90,27 @@ export function Footer() {
                         <h3 className="text-lg font-semibold mb-4">Our Services</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/services/study-visa" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services/study-visa" className="text-gray-400 hover:text-accent transition-colors">
                                     Study Visa
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services/work-visa" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services/work-visa" className="text-gray-400 hover:text-accent transition-colors">
                                     Work Visa
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services/pr-visa" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services/pr-visa" className="text-gray-400 hover:text-accent transition-colors">
                                     PR Visa
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services/visitor-visa" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services/visitor-visa" className="text-gray-400 hover:text-accent transition-colors">
                                     Visitor Visa
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/services/dependent-visa" className="text-gray-400 hover:text-primary transition-colors">
+                                <Link href="/services/dependent-visa" className="text-gray-400 hover:text-accent transition-colors">
                                     Dependent Visa
                                 </Link>
                             </li>
@@ -122,21 +122,21 @@ export function Footer() {
                         <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
-                                <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
+                                <MapPin className="h-5 w-5 text-accent shrink-0 mt-1" />
                                 <span className="text-gray-400">
                                     Hyderabad, Telangana, <br />
                                     India
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 text-primary shrink-0" />
-                                <a href="tel:+917997051424" className="text-gray-400 hover:text-primary transition-colors">
+                                <Phone className="h-5 w-5 text-accent shrink-0" />
+                                <a href="tel:+917997051424" className="text-gray-400 hover:text-accent transition-colors">
                                     +91 79970 51424
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 text-primary shrink-0" />
-                                <a href="mailto:info@lmglobaloverseas.com" className="text-gray-400 hover:text-primary transition-colors">
+                                <Mail className="h-5 w-5 text-accent shrink-0" />
+                                <a href="mailto:info@lmglobaloverseas.com" className="text-gray-400 hover:text-accent transition-colors">
                                     info@lmglobaloverseas.com
                                 </a>
                             </li>

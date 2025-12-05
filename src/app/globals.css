@@ -1,33 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #0033CC;
-  --primary-dark: #002299;
-  --accent: #FFD700;
-  --accent-green: #28A745;
+  /* Primary Brand Colors */
+  --primary: #094D98; /* Deep blue */
+  --primary-foreground: #ffffff;
+  
+  /* Accent Blues */
+  --accent: #61B1D4; /* Bright blue */
+  --accent-muted: #8DABBE; /* Muted blue-gray */
+  
+  /* Neutrals */
+  --neutral-dark: #757C7C; /* Primary text */
+  --neutral-cool: #74747C; /* Secondary text */
+  --neutral-light: #ACACB4; /* Borders */
+  --neutral-teal: #ACB4B4; /* Disabled */
+  
+  /* Backgrounds */
+  --background: #ffffff; /* Main content areas (cards) */
+  --page-background: #E3F4FB; /* Default page background */
+  
+  /* Standard Tailwind mappings */
+  --foreground: #757C7C;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
+  --color-primary-foreground: var(--primary-foreground);
+  
   --color-accent: var(--accent);
-  --color-accent-green: var(--accent-green);
+  --color-accent-muted: var(--accent-muted);
+  
+  --color-neutral-dark: var(--neutral-dark);
+  --color-neutral-cool: var(--neutral-cool);
+  --color-neutral-light: var(--neutral-light);
+  --color-neutral-teal: var(--neutral-teal);
+  
+  --color-page: var(--page-background);
+  
   --font-sans: var(--font-outfit);
 }
 
+/* 
+  Commenting out dark mode for now to enforce the specific light-mode palette requested.
+  Uncomment if dark mode support is needed in the future.
+*/
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+*/
 
 body {
-  background: var(--background);
+  background: var(--page-background);
   color: var(--foreground);
   font-family: var(--font-outfit), sans-serif;
 }

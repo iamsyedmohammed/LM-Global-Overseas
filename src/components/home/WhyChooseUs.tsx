@@ -35,7 +35,7 @@ export function WhyChooseUs() {
                         <h2 className="text-3xl font-bold md:text-4xl mb-6">
                             Why Choose LM Global Overseas?
                         </h2>
-                        <p className="text-gray-600 mb-8 text-lg">
+                        <p className="text-neutral-cool mb-8 text-lg">
                             We understand that immigration is a life-changing decision. That's why we are committed to providing the best guidance and support to make your dream a reality.
                         </p>
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -44,13 +44,13 @@ export function WhyChooseUs() {
                                 return (
                                     <div key={feature.title} className="flex gap-4">
                                         <div className="shrink-0">
-                                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-primary">
+                                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary">
                                                 <Icon className="h-5 w-5" />
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
-                                            <p className="text-sm text-gray-600">{feature.description}</p>
+                                            <h3 className="font-semibold text-neutral-dark mb-1">{feature.title}</h3>
+                                            <p className="text-sm text-neutral-cool">{feature.description}</p>
                                         </div>
                                     </div>
                                 );

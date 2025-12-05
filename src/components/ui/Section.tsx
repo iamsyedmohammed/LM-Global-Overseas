@@ -8,10 +8,10 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export const Section = React.forwardRef<HTMLElement, SectionProps>(
     ({ className, variant = "default", children, ...props }, ref) => {
         const variants = {
-            default: "bg-white text-gray-900",
-            muted: "bg-gray-50 text-gray-900",
-            primary: "bg-primary text-white",
-            dark: "bg-gray-900 text-white",
+            default: "bg-white text-neutral-dark",
+            muted: "bg-page text-neutral-dark",
+            primary: "bg-primary text-primary-foreground",
+            dark: "bg-neutral-dark text-white",
         };
 
         return (

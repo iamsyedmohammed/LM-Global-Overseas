@@ -6,7 +6,7 @@ import { Container } from "../ui/Section";
 
 export function Hero() {
     return (
-        <section className="relative flex min-h-[80vh] items-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
+        <section className="relative flex min-h-[80vh] items-center bg-gradient-to-br from-primary via-primary/90 to-primary text-white overflow-hidden">
             {/* Background Image */}
             <div
                 className="absolute inset-0 opacity-20 bg-cover bg-center"
@@ -18,7 +18,7 @@ export function Hero() {
                     <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:leading-tight">
                         Your Trusted <span className="text-accent">Education & Immigration</span> Partner
                     </h1>
-                    <p className="text-lg text-gray-200 md:text-xl max-w-lg">
+                    <p className="text-lg text-white/80 md:text-xl max-w-lg">
                         Empowering students and professionals to achieve their global education and career dreams. Expert guidance for Study, Work, and PR visas worldwide.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -39,7 +39,7 @@ export function Hero() {
                             </Button>
                         </Link>
                     </div>
-                    <div className="pt-8 flex items-center gap-8 text-sm text-gray-300">
+                    <div className="pt-8 flex items-center gap-8 text-sm text-white/70">
                         <div>
                             <p className="font-bold text-2xl text-white">500+</p>
                             <p>Visas Approved</p>

@@ -8,11 +8,11 @@ import { countries } from "@/data/countries";
 
 export function CountriesSection() {
     return (
-        <Section className="bg-gray-50">
+        <Section className="bg-page">
             <Container>
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold md:text-4xl mb-4">Choose Your Destination</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-neutral-cool max-w-2xl mx-auto">
                         Explore opportunities in top global destinations. We provide expert guidance for visas to these countries.
                     </p>
                 </div>
@@ -34,7 +34,7 @@ export function CountriesSection() {
                                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                                         {country.name}
                                     </h3>
-                                    <p className="text-gray-600 mb-4 text-sm line-clamp-2">
+                                    <p className="text-neutral-cool mb-4 text-sm line-clamp-2">
                                         {country.description}
                                     </p>
                                     <div className="flex items-center text-primary font-medium text-sm">

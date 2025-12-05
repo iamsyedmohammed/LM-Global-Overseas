@@ -60,18 +60,18 @@ export default async function CountryPage({ params }: Props) {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/40" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
                 </div>
                 <Container className="relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                            <Globe className="h-4 w-4 text-blue-200" />
-                            <span className="text-sm font-medium text-blue-100">Study & Immigration Destination</span>
+                            <Globe className="h-4 w-4 text-white/80" />
+                            <span className="text-sm font-medium text-white/90">Study & Immigration Destination</span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white">
                             Study & Work in {country.name}
                         </h1>
-                        <p className="text-xl text-blue-100 leading-relaxed">
+                        <p className="text-xl text-white/90 leading-relaxed">
                             {country.description}
                         </p>
                     </div>
@@ -83,32 +83,32 @@ export default async function CountryPage({ params }: Props) {
                 <Container>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div className="text-center">
-                            <div className="h-12 w-12 bg-blue-100 text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <div className="h-12 w-12 bg-page text-primary rounded-lg flex items-center justify-center mx-auto mb-3">
                                 <GraduationCap className="h-6 w-6" />
                             </div>
-                            <p className="text-2xl font-bold text-gray-900">Top</p>
-                            <p className="text-sm text-gray-600">Universities</p>
+                            <p className="text-2xl font-bold text-neutral-dark">Top</p>
+                            <p className="text-sm text-neutral-cool">Universities</p>
                         </div>
                         <div className="text-center">
                             <div className="h-12 w-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                                 <Briefcase className="h-6 w-6" />
                             </div>
-                            <p className="text-2xl font-bold text-gray-900">Work</p>
-                            <p className="text-sm text-gray-600">Opportunities</p>
+                            <p className="text-2xl font-bold text-neutral-dark">Work</p>
+                            <p className="text-sm text-neutral-cool">Opportunities</p>
                         </div>
                         <div className="text-center">
                             <div className="h-12 w-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                                 <Home className="h-6 w-6" />
                             </div>
-                            <p className="text-2xl font-bold text-gray-900">PR</p>
-                            <p className="text-sm text-gray-600">Pathways</p>
+                            <p className="text-2xl font-bold text-neutral-dark">PR</p>
+                            <p className="text-sm text-neutral-cool">Pathways</p>
                         </div>
                         <div className="text-center">
                             <div className="h-12 w-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                                 <TrendingUp className="h-6 w-6" />
                             </div>
-                            <p className="text-2xl font-bold text-gray-900">High</p>
-                            <p className="text-sm text-gray-600">Success Rate</p>
+                            <p className="text-2xl font-bold text-neutral-dark">High</p>
+                            <p className="text-sm text-neutral-cool">Success Rate</p>
                         </div>
                     </div>
                 </Container>
@@ -122,8 +122,8 @@ export default async function CountryPage({ params }: Props) {
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Studying & Working in {country.name}</h2>
                             <div className="w-20 h-1 bg-primary mx-auto"></div>
                         </div>
-                        <Card className="p-8 md:p-12 bg-gradient-to-br from-blue-50 to-white border-blue-100">
-                            <p className="text-gray-700 text-lg leading-relaxed">
+                        <Card className="p-8 md:p-12 bg-gradient-to-br from-page to-white border-neutral-light">
+                            <p className="text-neutral-cool text-lg leading-relaxed">
                                 {country.details.overview}
                             </p>
                         </Card>
@@ -136,7 +136,7 @@ export default async function CountryPage({ params }: Props) {
                 <Container>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Available Visa & Immigration Options</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-neutral-cool max-w-2xl mx-auto">
                             Explore the different pathways to study, work, and settle in {country.name}
                         </p>
                     </div>
@@ -144,12 +144,12 @@ export default async function CountryPage({ params }: Props) {
                         {country.details.visaTypes.map((visa, index) => (
                             <Card key={index} className="p-6 hover:shadow-lg transition-shadow bg-white">
                                 <div className="flex items-start gap-4">
-                                    <div className="h-12 w-12 bg-gradient-to-br from-primary to-blue-600 text-white rounded-lg flex items-center justify-center shrink-0">
+                                    <div className="h-12 w-12 bg-gradient-to-br from-primary to-accent text-white rounded-lg flex items-center justify-center shrink-0">
                                         <FileText className="h-6 w-6" />
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="font-bold text-xl mb-2 text-gray-900">{visa.name}</h3>
-                                        <p className="text-gray-600 leading-relaxed">{visa.description}</p>
+                                        <h3 className="font-bold text-xl mb-2 text-neutral-dark">{visa.name}</h3>
+                                        <p className="text-neutral-cool leading-relaxed">{visa.description}</p>
                                     </div>
                                 </div>
                             </Card>
@@ -163,7 +163,7 @@ export default async function CountryPage({ params }: Props) {
                 <Container>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose {country.name}?</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-neutral-cool max-w-2xl mx-auto">
                             Discover the key benefits and opportunities that make {country.name} an ideal destination
                         </p>
                     </div>
@@ -174,7 +174,7 @@ export default async function CountryPage({ params }: Props) {
                                     <div className="h-8 w-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
                                         <CheckCircle className="h-5 w-5" />
                                     </div>
-                                    <p className="text-gray-700 text-lg leading-relaxed">{reason}</p>
+                                    <p className="text-neutral-cool text-lg leading-relaxed">{reason}</p>
                                 </div>
                             </Card>
                         ))}
@@ -188,17 +188,17 @@ export default async function CountryPage({ params }: Props) {
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">How We Help You Succeed</h2>
-                            <p className="text-gray-600">
+                            <p className="text-neutral-cool">
                                 Our comprehensive support throughout your {country.name} immigration journey
                             </p>
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <Card className="p-6 text-center bg-white">
-                                <div className="h-16 w-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div className="h-16 w-16 bg-page text-primary rounded-full flex items-center justify-center mx-auto mb-4">
                                     <Users className="h-8 w-8" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2">Profile Assessment</h3>
-                                <p className="text-gray-600 text-sm">
+                                <p className="text-neutral-cool text-sm">
                                     Evaluate your eligibility and recommend the best pathway
                                 </p>
                             </Card>
@@ -207,7 +207,7 @@ export default async function CountryPage({ params }: Props) {
                                     <GraduationCap className="h-8 w-8" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2">University Selection</h3>
-                                <p className="text-gray-600 text-sm">
+                                <p className="text-neutral-cool text-sm">
                                     Help you choose the right institution and program
                                 </p>
                             </Card>
@@ -216,7 +216,7 @@ export default async function CountryPage({ params }: Props) {
                                     <FileText className="h-8 w-8" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2">Visa Application</h3>
-                                <p className="text-gray-600 text-sm">
+                                <p className="text-neutral-cool text-sm">
                                     Complete documentation and visa filing support
                                 </p>
                             </Card>
@@ -226,13 +226,13 @@ export default async function CountryPage({ params }: Props) {
             </Section>
 
             {/* CTA */}
-            <Section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+            <Section className="bg-gradient-to-br from-primary via-primary/90 to-primary text-white">
                 <Container className="text-center">
                     <div className="max-w-3xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             Ready to Start Your {country.name} Journey?
                         </h2>
-                        <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                        <p className="text-white/90 text-lg mb-8 leading-relaxed">
                             Our immigration experts specialize in {country.name} visas and have helped hundreds of students and professionals achieve their dreams. Book a free consultation today!
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
@@ -253,7 +253,7 @@ export default async function CountryPage({ params }: Props) {
                                 </Button>
                             </Link>
                         </div>
-                        <p className="text-sm text-blue-200">
+                        <p className="text-sm text-white/80">
                             ✓ Free consultation · ✓ Expert guidance · ✓ 98% success rate
                         </p>
                     </div>

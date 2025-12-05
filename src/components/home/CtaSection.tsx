@@ -11,7 +11,7 @@ export function CtaSection() {
                 <h2 className="text-3xl font-bold md:text-4xl mb-6">
                     Ready to Start Your Journey?
                 </h2>
-                <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
+                <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
                     Check your eligibility for free or book a consultation with our experts to get a personalized roadmap.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

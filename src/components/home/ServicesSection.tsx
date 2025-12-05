@@ -11,7 +11,7 @@ export function ServicesSection() {
             <Container>
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold md:text-4xl mb-4">Our Services</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-neutral-cool max-w-2xl mx-auto">
                         Comprehensive immigration solutions tailored to your needs. From study to settlement, we are with you every step of the way.
                     </p>
                 </div>
@@ -21,14 +21,14 @@ export function ServicesSection() {
                         const Icon = service.icon;
                         return (
                             <Link key={service.id} href={`/services/${service.slug}`} className="group">
-                                <Card hoverEffect className="h-full border-gray-100 bg-white p-8">
-                                    <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <Card hoverEffect className="h-full border-neutral-light bg-white p-8">
+                                    <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-page text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                         <Icon className="h-7 w-7" />
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-600 mb-6 text-sm">
+                                    <p className="text-neutral-cool mb-6 text-sm">
                                         {service.description}
                                     </p>
                                     <div className="flex items-center text-primary font-medium text-sm mt-auto">

@@ -40,8 +40,8 @@ export function Header() {
             className={cn(
                 "sticky top-0 z-50 w-full transition-all duration-300",
                 scrolled
-                    ? "bg-white/95 backdrop-blur-lg shadow-md border-b border-gray-100"
-                    : "bg-white border-b border-gray-200"
+                    ? "bg-white/95 backdrop-blur-lg shadow-md border-b border-neutral-light"
+                    : "bg-white border-b border-neutral-light"
             )}
         >
             <div className="container mx-auto flex h-32 items-center justify-between px-4 md:px-6">
@@ -62,7 +62,7 @@ export function Header() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="px-4 py-2 text-lg font-medium text-gray-700 hover:text-primary transition-colors"
+                            className="px-4 py-2 text-lg font-medium text-neutral-dark hover:text-accent transition-colors"
                         >
                             {item.name}
                         </Link>
@@ -86,7 +86,7 @@ export function Header() {
                     <button
                         className={cn(
                             "lg:hidden p-2 rounded-lg transition-colors",
-                            isOpen ? "bg-primary text-white" : "text-gray-600 hover:bg-gray-100"
+                            isOpen ? "bg-primary text-primary-foreground" : "text-neutral-dark hover:bg-gray-100"
                         )}
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
@@ -110,7 +110,7 @@ export function Header() {
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="block px-4 py-3 text-lg text-gray-700 hover:text-primary font-medium transition-colors"
+                                    className="block px-4 py-3 text-lg text-neutral-dark hover:text-accent font-medium transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item.name}

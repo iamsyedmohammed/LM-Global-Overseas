@@ -46,39 +46,26 @@ export function Header() {
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="flex items-center gap-2">
-                        <div className="h-10 w-10 bg-gradient-to-br from-primary to-blue-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                            <span className="text-white font-bold text-lg">LM</span>
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl font-bold text-primary leading-none">LM Global</span>
-                            <span className="text-xs font-medium text-gray-500 leading-none">Overseas</span>
-                        </div>
+                    <div className="relative h-12 w-auto aspect-[3/1]">
+                        <img
+                            src="/logo.png"
+                            alt="LM Global Overseas"
+                            className="h-full w-auto object-contain"
+                        />
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-1">
-                    {navItems.map((item) => {
-                        const isActive = pathname === item.href;
-                        return (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className={cn(
-                                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200",
-                                    isActive
-                                        ? "text-primary bg-blue-50"
-                                        : "text-gray-700 hover:text-primary hover:bg-gray-50"
-                                )}
-                            >
-                                {item.name}
-                                {isActive && (
-                                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary rounded-full" />
-                                )}
-                            </Link>
-                        );
-                    })}
+                <nav className="hidden lg:flex items-center gap-2">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
                 </nav>
 
                 {/* CTA & Mobile Toggle */}
@@ -89,7 +76,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="hidden lg:block"
                     >
-                        <Button variant="secondary" size="sm" className="shadow-md hover:shadow-lg transition-shadow">
+                        <Button variant="secondary" size="sm" className="shadow-md hover:shadow-lg transition-shadow hover:scale-105 active:scale-95 duration-200">
                             <Phone className="mr-2 h-4 w-4" />
                             +91 79970 51424
                         </Button>
@@ -118,25 +105,16 @@ export function Header() {
                 <div className="border-t bg-gradient-to-b from-white to-gray-50">
                     <div className="container mx-auto px-4 py-6">
                         <nav className="flex flex-col gap-2 mb-6">
-                            {navItems.map((item) => {
-                                const isActive = pathname === item.href;
-                                return (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className={cn(
-                                            "flex items-center justify-between px-4 py-3 rounded-lg font-medium transition-all duration-200",
-                                            isActive
-                                                ? "bg-primary text-white shadow-md"
-                                                : "text-gray-700 hover:bg-blue-50 hover:text-primary"
-                                        )}
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        <span>{item.name}</span>
-                                        {isActive && <div className="h-2 w-2 rounded-full bg-white" />}
-                                    </Link>
-                                );
-                            })}
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="block px-4 py-3 text-gray-700 hover:text-primary font-medium transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
                         </nav>
 
                         <div className="pt-4 border-t border-gray-200">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Section, Container } from "../ui/Section";
 import { Card } from "../ui/Card";
+import { Button, buttonVariants, buttonSizes, buttonBaseStyles, cn } from "../ui/Button";
 import { countries } from "@/data/countries";
 
 export function CountriesSection() {
@@ -20,8 +21,8 @@ export function CountriesSection() {
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {countries.map((country) => (
                         <Link key={country.id} href={`/countries/${country.slug}`} className="group">
-                            <Card hoverEffect className="h-full overflow-hidden p-0 border-0 shadow-md">
-                                <div className="h-48 bg-gray-200 relative overflow-hidden">
+                            <Card hoverEffect className="h-full overflow-hidden p-0 flex flex-col">
+                                <div className="h-48 bg-gray-200 relative overflow-hidden shrink-0">
                                     <Image
                                         src={country.image}
                                         alt={country.name}
@@ -30,14 +31,14 @@ export function CountriesSection() {
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                 </div>
-                                <div className="p-6">
+                                <div className="p-6 flex flex-col flex-1">
                                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                                         {country.name}
                                     </h3>
                                     <p className="text-neutral-cool mb-4 text-sm line-clamp-2">
                                         {country.description}
                                     </p>
-                                    <div className="flex items-center text-primary font-medium text-sm">
+                                    <div className={cn(buttonBaseStyles, buttonVariants.primary, buttonSizes.sm, "w-fit mt-auto group-hover:bg-accent")}>
                                         Explore Options <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </div>

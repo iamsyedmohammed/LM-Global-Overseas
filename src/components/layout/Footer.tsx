@@ -58,6 +58,11 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/courses" className="text-gray-400 hover:text-accent transition-colors">
+                                    Find Courses
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/services" className="text-gray-400 hover:text-accent transition-colors">
                                     Our Services
                                 </Link>
@@ -73,8 +78,13 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/testimonials" className="text-gray-400 hover:text-accent transition-colors">
+                                <Link href="/success-stories" className="text-gray-400 hover:text-accent transition-colors">
                                     Success Stories
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/faq" className="text-gray-400 hover:text-accent transition-colors">
+                                    FAQs
                                 </Link>
                             </li>
                             <li>

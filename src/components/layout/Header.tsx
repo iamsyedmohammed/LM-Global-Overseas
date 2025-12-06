@@ -8,10 +8,11 @@ import { Button } from "../ui/Button";
 import { cn } from "../ui/Button";
 
 const navItems = [
-    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Countries", href: "/countries" },
+    { name: "Courses", href: "/courses" },
+    { name: "Success Stories", href: "/success-stories" },
     { name: "Tools", href: "/tools" },
     { name: "Contact", href: "/contact" },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Section, Container } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -139,9 +140,11 @@ export default function EligibilityCheckerPage() {
                                             </p>
                                         </div>
                                     </div>
-                                    <Button variant="secondary" className="w-full">
-                                        Book Free Consultation
-                                    </Button>
+                                    <Link href="/contact" className="w-full">
+                                        <Button variant="secondary" className="w-full">
+                                            Book Free Consultation
+                                        </Button>
+                                    </Link>
                                 </div>
                             )}
                         </Card>

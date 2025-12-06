@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section, Container } from "../ui/Section";
 import { Card } from "../ui/Card";
+import { Button, buttonVariants, buttonSizes, buttonBaseStyles, cn } from "../ui/Button";
 import { services } from "@/data/services";
 
 export function ServicesSection() {
@@ -21,7 +22,7 @@ export function ServicesSection() {
                         const Icon = service.icon;
                         return (
                             <Link key={service.id} href={`/services/${service.slug}`} className="group">
-                                <Card hoverEffect className="h-full border-neutral-light bg-white p-8">
+                                <Card hoverEffect className="h-full bg-white p-8 flex flex-col">
                                     <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-page text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                         <Icon className="h-7 w-7" />
                                     </div>
@@ -31,7 +32,7 @@ export function ServicesSection() {
                                     <p className="text-neutral-cool mb-6 text-sm">
                                         {service.description}
                                     </p>
-                                    <div className="flex items-center text-primary font-medium text-sm mt-auto">
+                                    <div className={cn(buttonBaseStyles, buttonVariants.primary, buttonSizes.sm, "w-fit mt-auto group-hover:bg-accent")}>
                                         Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </Card>

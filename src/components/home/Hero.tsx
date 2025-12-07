@@ -41,15 +41,15 @@ export function Hero() {
                     </div>
                     <div className="pt-8 flex items-center gap-8 text-sm text-white/70">
                         <div>
-                            <p className="font-bold text-2xl text-white">500+</p>
+                            <p className="font-bold text-2xl text-white">250+</p>
                             <p>Visas Approved</p>
                         </div>
                         <div>
-                            <p className="font-bold text-2xl text-white">98%</p>
+                            <p className="font-bold text-2xl text-white">95%</p>
                             <p>Success Rate</p>
                         </div>
                         <div>
-                            <p className="font-bold text-2xl text-white">10+</p>
+                            <p className="font-bold text-2xl text-white">4+</p>
                             <p>Years Experience</p>
                         </div>
                     </div>

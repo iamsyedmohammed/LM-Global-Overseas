@@ -192,9 +192,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                                 </Button>
                             </Link>
                         </div>
-                        <p className="text-sm text-blue-200 mt-6">
-                            ✓ Free consultation · ✓ Expert guidance · ✓ 98% success rate
-                        </p>
+                        <div className="mt-8 flex flex-wrap justify-center gap-4">
+                            {[
+                                "Free consultation",
+                                "Expert guidance",
+                                "98% success rate"
+                            ].map((feature, i) => (
+                                <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white font-medium text-sm">
+                                    <div className="h-5 w-5 rounded-full bg-green-500 text-white flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    {feature}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </Container>
             </Section>

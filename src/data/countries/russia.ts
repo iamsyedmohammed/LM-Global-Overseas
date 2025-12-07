@@ -5,7 +5,7 @@ export const russia: Country = {
     name: "Russia",
     slug: "russia",
     description: "MBBS in Russia is a top choice for Indian students due to affordable fees and high-quality medical education.",
-    image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800&q=80",
+    image: "/images/countries/russia.png",
     details: {
         overview: "MBBS in Russia is the best option for many Indian Students regarding medical education. With modern infrastructure, competent faculty, and a curriculum allied with international standards, federal medical universities in Russia have a solid reputation for a rich tradition of excellence.",
         visaTypes: [

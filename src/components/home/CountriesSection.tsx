@@ -12,7 +12,7 @@ export function CountriesSection() {
         <Section className="bg-page">
             <Container>
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold md:text-4xl mb-4">Choose Your Destination</h2>
+                    <h2 className="text-3xl font-bold md:text-4xl mb-4 text-black">Choose Your Destination</h2>
                     <p className="text-neutral-cool max-w-2xl mx-auto">
                         Explore opportunities in top global destinations. We provide expert guidance for visas to these countries.
                     </p>

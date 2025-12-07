@@ -11,9 +11,7 @@ const navItems = [
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Countries", href: "/countries" },
-    { name: "Courses", href: "/courses" },
     { name: "Medical Rotations", href: "/medical-rotations" },
-    { name: "Tools", href: "/tools" },
     { name: "Contact", href: "/contact" },
 ];
 

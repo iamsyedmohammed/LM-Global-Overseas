@@ -29,7 +29,7 @@ export function MbbsCountriesSection() {
         <Section className="bg-white">
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold md:text-4xl mb-4 text-neutral-dark">
+                    <h2 className="text-3xl font-bold md:text-4xl mb-4 text-black">
                         Most Popular Countries for MBBS
                     </h2>
                     <p className="text-neutral-cool max-w-2xl mx-auto text-lg">

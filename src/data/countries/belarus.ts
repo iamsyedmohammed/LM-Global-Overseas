@@ -5,7 +5,7 @@ export const belarus: Country = {
     name: "Belarus",
     slug: "belarus",
     description: "Study MBBS in Belarus – High-quality medical education at affordable fees.",
-    image: "https://images.unsplash.com/photo-1549694462-84065672d5f8?w=800&q=80",
+    image: "/images/countries/belarus.png",
     details: {
         overview: "MBBS in Belarus has opened up a new horizon of opportunities for the MBBS aspirants. The fantastic education structure attracts medical students across the globe to complete MBBS courses in Belarus. India offers only a limited number of vacancies, whereas countries like Belarus offer 70-80 thousand vacancies for over ten international medical candidates. The duration of MBBS in Belarus is of 6 years. The students will have to qualify NEET for MBBS courses in Belarus.",
         visaTypes: [

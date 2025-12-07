@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Plane, Users, Globe } from "lucide-react";
+import { GraduationCap, Briefcase, Plane, Users, Globe, Map } from "lucide-react";
 
 export const services = [
     {
@@ -152,6 +152,38 @@ export const services = [
                 "Application Submission",
                 "Biometrics & Medical",
                 "Visa Approval",
+            ],
+        },
+    },
+    {
+        id: "schengen-visa",
+        title: "Schengen Visa",
+        slug: "schengen-visa",
+        description: "Travel freely across 27 European countries with a single visa.",
+        icon: Map,
+        details: {
+            overview: "The Schengen Visa allows you to travel to 27 European countries including France, Germany, Italy, Spain, and Switzerland for tourism, business, or family visits with a single visa.",
+            eligibility: [
+                "Valid Passport (at least 3 months validity)",
+                "Travel Insurance (min €30,000 coverage)",
+                "Proof of Accommodation / Hotel Booking",
+                "Return Flight Itinerary",
+                "Sufficient Financial Means",
+            ],
+            documents: [
+                "Visa Application Form",
+                "Passport Photos",
+                "Travel Insurance Policy",
+                "Proof of Income / Bank Statements",
+                "Employment Leave Letter / Business Cover Letter",
+            ],
+            process: [
+                "Determine the Embassy/Consulate",
+                "Fill the Schengen Application Form",
+                "Book Appointment",
+                "Submit Biometrics & Documents",
+                "Visa Interview (if required)",
+                "Collect Passport",
             ],
         },
     },

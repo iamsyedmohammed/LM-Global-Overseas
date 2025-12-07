@@ -10,7 +10,7 @@ export function TestimonialsSection() {
         <Section>
             <Container>
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold md:text-4xl mb-4">Success Stories</h2>
+                    <h2 className="text-3xl font-bold md:text-4xl mb-4 text-black">Success Stories</h2>
                     <p className="text-neutral-cool max-w-2xl mx-auto">
                         Don't just take our word for it. Hear from our happy clients who have successfully moved abroad.
                     </p>

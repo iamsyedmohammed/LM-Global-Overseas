@@ -11,7 +11,7 @@ export function ServicesSection() {
         <Section>
             <Container>
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold md:text-4xl mb-4">Our Services</h2>
+                    <h2 className="text-3xl font-bold md:text-4xl mb-4 text-black">Our Services</h2>
                     <p className="text-neutral-cool max-w-2xl mx-auto">
                         Comprehensive immigration solutions tailored to your needs. From study to settlement, we are with you every step of the way.
                     </p>

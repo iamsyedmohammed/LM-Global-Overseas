@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Platform Roadmap</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+        }
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            h2 {
+                page-break-before: always;
+                margin-top: 0;
+                padding-top: 20px;
+            }
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive Architecture: Secure Language Learning Platform</h1>
+        <p><strong>Stack</strong>: React (Frontend) | PHP (Backend API) | MySQL (Database)</p>
+        <p>This document details the security authentication flows, dashboard designs, and technical layouts required to build a production-grade, secure platform.</p>
+
+        <h2>1. Security & Authentication Architecture (The "Safe" Part)</h2>
+        <p>To ensure the platform is secure, we will strictly separate the Frontend (React) from the Backend (PHP) and use <strong>JWT (JSON Web Tokens)</strong> with <strong>HttpOnly Cookies</strong>.</p>
+
+        <h3>A. Authentication Flow (JWT + HttpOnly)</h3>
+        <ol>
+            <li><strong>Login</strong>:
+                <ul>
+                    <li>User sends <code>email</code> & <code>password</code> via React form to <code>/api/auth/login.php</code>.</li>
+                    <li>PHP validates hash using <code>password_verify()</code>.</li>
+                    <li><strong>If valid</strong>:
+                        <ul>
+                            <li>Generate an <strong>Access Token</strong> (Short-lived, e.g., 15 min). Send this in the JSON response body.</li>
+                            <li>Generate a <strong>Refresh Token</strong> (Long-lived, e.g., 7 days). <strong>Set this as an HttpOnly, Secure Cookie</strong>.</li>
+                            <li><em>Why?</em> HttpOnly cookies cannot be accessed by JavaScript, making them immune to XSS attacks (Cross-Site Scripting).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Request Interceptor (React)</strong>:
+                <ul>
+                    <li>Store the <strong>Access Token</strong> in React application state (Memory). <strong>Do not</strong> store it in LocalStorage (vulnerable to XSS).</li>
+                    <li>Attach the Access Token to every API call via the <code>Authorization: Bearer &lt;token&gt;</code> header.</li>
+                </ul>
+            </li>
+            <li><strong>Token Refresh</strong>:
+                <ul>
+                    <li>If an API call returns <code>401 Unauthorized</code>, React automatically calls <code>/api/auth/refresh.php</code>.</li>
+                    <li>PHP reads the HttpOnly cookie, verifies it, and issues a new Access Token.</li>
+                </ul>
+            </li>
+            <li><strong>Logout</strong>:
+                <ul>
+                    <li>Call <code>/api/auth/logout.php</code> to destroy the cookie and invalidate the refresh token in the database.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>B. Backend Security Checklist (PHP)</h3>
+        <ol>
+            <li><strong>SQL Injection</strong>: NEVER use direct string concatenation. ALWAYS use <strong>PDO Prepared Statements</strong>.
+                <ul>
+                    <li><em>Bad</em>: <code>$sql = "SELECT * FROM users WHERE email = '$email'";</code></li>
+                    <li><em>Good</em>: <code>$stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?"); $stmt->execute([$email]);</code></li>
+                </ul>
+            </li>
+            <li><strong>CORS (Cross-Origin Resource Sharing)</strong>:
+                <ul>
+                    <li>Configure PHP headers to accept requests <strong>ONLY</strong> from your React frontend domain.</li>
+                    <li><code>header("Access-Control-Allow-Origin: https://your-react-app.com");</code></li>
+                </ul>
+            </li>
+            <li><strong>Rate Limiting</strong>:
+                <ul>
+                    <li>Implement a simple counter in PHP to block IP addresses that try to login more than 5 times in 1 minute.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>2. Dashboard Architecture</h2>
+        <p>The dashboard is the central hub. It needs to be personalized and data-driven.</p>
+
+        <h3>A. Layout Structure (React)</h3>
+        <p>We will use a <strong>Layout Wrapper Pattern</strong>.</p>
+        <ul>
+            <li><strong><code>MainLayout.tsx</code></strong>:
+                <ul>
+                    <li><strong>Sidebar (Left, Fixed)</strong>: Navigation (Home, Practice, Mock Tests, Analytics, Profile). Auto-collapses on mobile.</li>
+                    <li><strong>TopHeader (Top, Sticky)</strong>: User Avatar, Notification Bell, "Resume Last Test" button.</li>
+                    <li><strong>ContentArea (Dynamic)</strong>: Where the pages render.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>B. Student Dashboard Widgets</h3>
+        <ol>
+            <li><strong>The "Hero" Stat Cards</strong>: Tests Completed, Average Score, Current Streak.</li>
+            <li><strong>Performance Graph</strong>: X-Axis (Date) vs Y-Axis (Score) using <code>recharts</code>.</li>
+            <li><strong>"Weakness Radar"</strong>: A radar chart showing proficiency by category (Reading vs Listening), actionable on click.</li>
+            <li><strong>Recent Activity Feed</strong>: List of last 3 tests with review options.</li>
+        </ol>
+
+        <h2>3. Exam Interface Layout (The "Arena")</h2>
+        <p>This is the most complex UI part. It must be distraction-free.</p>
+
+        <h3>A. Split-Screen Design</h3>
+        <p>Users need to see the text and questions simultaneously.</p>
+        <ul>
+            <li><strong>Wrapper</strong>: <code>h-screen overflow-hidden flex flex-col</code></li>
+            <li><strong>Header</strong>: Timer, Progress Bar, Submit Button.</li>
+            <li><strong>Body</strong>: <code>flex-1 grid grid-cols-2</code>
+                <ul>
+                    <li><strong>Left Pane</strong>: Source Material (scrollable independent of questions).</li>
+                    <li><strong>Right Pane</strong>: Question Components (scrollable independent of text).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>4. Database Schema Refinements (MySQL)</h2>
+        <pre><code>CREATE TABLE user_refresh_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    token_hash VARCHAR(255) NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_ip VARCHAR(45),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE activity_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    action VARCHAR(50),
+    details JSON,
+    ip_address VARCHAR(45),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_analytics (
+    user_id INT PRIMARY KEY,
+    weakest_category_id INT,
+    strongest_category_id INT,
+    average_score DECIMAL(5,2),
+    last_updated TIMESTAMP
+);</code></pre>
+
+        <h2>5. Implementation Roadmap</h2>
+        <ol>
+            <li><strong>Step 1 (Backend)</strong>: Install <code>firebase/php-jwt</code> via Composer.</li>
+            <li><strong>Step 2 (Backend)</strong>: Create a <code>Database</code> singleton class.</li>
+            <li><strong>Step 3 (Frontend)</strong>: Create <code>AuthContext.tsx</code> to handle state and refresh loops.</li>
+            <li><strong>Step 4 (Frontend)</strong>: Implement Protected Routes.</li>
+        </ol>
+    </div>
+</body>
+</html>

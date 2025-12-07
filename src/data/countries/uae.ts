@@ -5,7 +5,7 @@ export const uae: Country = {
     name: "UAE",
     slug: "uae",
     description: "Tax-free income and luxury lifestyle in the Middle East.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    image: "/images/countries/uae.png",
     details: {
         overview: "The UAE offers a tax-free income, modern infrastructure, and a cosmopolitan lifestyle.",
         visaTypes: [

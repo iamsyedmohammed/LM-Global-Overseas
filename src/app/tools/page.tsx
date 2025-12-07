@@ -4,37 +4,28 @@ import Link from "next/link";
 import { Section, Container } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button, buttonVariants, buttonSizes, buttonBaseStyles, cn } from "@/components/ui/Button";
-import { Calculator, CheckSquare, FileCheck } from "lucide-react";
+import {
+    Calculator, CheckSquare, FileCheck, FileText, Coins, Scale, ArrowLeftRight, ClipboardList, CheckCircle
+} from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import { tools } from "@/data/tools";
 
 export const metadata: Metadata = {
     title: "Visa Tools | LM Global Overseas",
-    description: "Use our free visa tools to check eligibility, calculate points, and generate document checklists.",
+    description: "Use our free visa tools to check eligibility, calculate points, generate SOPs, and more.",
 };
 
-const tools = [
-    {
-        title: "Eligibility Checker",
-        description: "Find out if you qualify for your desired visa with our quick assessment tool.",
-        icon: CheckSquare,
-        href: "/tools/eligibility-checker",
-        color: "blue",
-    },
-    {
-        title: "Document Checklist",
-        description: "Get a personalized list of documents required for your visa application.",
-        icon: FileCheck,
-        href: "/tools/document-checklist",
-        color: "green",
-    },
-    {
-        title: "Points Calculator",
-        description: "Calculate your CRS score for Canada Express Entry or Australia PR.",
-        icon: Calculator,
-        href: "/tools/points-calculator",
-        color: "purple",
-    },
-];
+const iconMap: any = {
+    CheckCircle,
+    Calculator,
+    FileCheck,
+    FileText,
+    Coins,
+    Scale,
+    ArrowLeftRight,
+    ClipboardList,
+    CheckSquare // Fallback or extra
+};
 
 export default function ToolsPage() {
     return (
@@ -50,9 +41,9 @@ export default function ToolsPage() {
 
             <Section>
                 <Container>
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {tools.map((tool) => {
-                            const Icon = tool.icon;
+                            const Icon = iconMap[tool.icon] || CheckCircle;
                             return (
                                 <Link key={tool.title} href={tool.href} className="group">
                                     <Card hoverEffect className="h-full p-8 flex flex-col">

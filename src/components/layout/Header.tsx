@@ -12,7 +12,7 @@ const navItems = [
     { name: "Services", href: "/services" },
     { name: "Countries", href: "/countries" },
     { name: "Courses", href: "/courses" },
-    { name: "Success Stories", href: "/success-stories" },
+    { name: "Medical Rotations", href: "/medical-rotations" },
     { name: "Tools", href: "/tools" },
     { name: "Contact", href: "/contact" },
 ];
@@ -78,7 +78,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="hidden lg:block"
                     >
-                        <Button variant="secondary" size="lg" className="shadow-md hover:shadow-lg transition-shadow hover:scale-105 active:scale-95 duration-200 text-base">
+                        <Button variant="primary" size="lg" className="shadow-md hover:shadow-lg transition-shadow hover:scale-105 active:scale-95 duration-200 text-base">
                             <Phone className="mr-2 h-5 w-5" />
                             +91 79970 51424
                         </Button>

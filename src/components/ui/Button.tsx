@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "secondary" | "outline" | "ghost";
+    variant?: "primary" | "secondary" | "outline" | "ghost" | "link";
     size?: "sm" | "md" | "lg";
     isLoading?: boolean;
 }
@@ -17,6 +17,7 @@ export const buttonVariants = {
     secondary: "bg-white border border-neutral-light text-primary hover:bg-gray-50 shadow-sm transition-colors duration-200",
     outline: "border-2 border-primary text-primary hover:bg-primary/5 transition-colors duration-200",
     ghost: "text-neutral-dark hover:bg-gray-100 hover:text-primary transition-colors duration-200",
+    link: "text-primary hover:underline underline-offset-4 shadow-none p-0",
 };
 
 export const buttonSizes = {
